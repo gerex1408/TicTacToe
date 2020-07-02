@@ -21,7 +21,7 @@ public class Board {
         int j=0, z=0;
         boolean trobat=false;
 
-        while (i<9 && !trobat){
+        while (i<=9 && !trobat){
             if(pos==i) {
                 trobat=true;
                 taulell[j][z] = jugador.simbol;

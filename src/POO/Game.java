@@ -15,7 +15,7 @@ public class Game {
             Scanner scan = new Scanner(System.in);
             System.out.println("Jugador 1: Entra la posicio (1-9):");
             int pos1= jugador1.Posicionar(scan);
-            jugador1.comprovarPosicio(jugador2,pos1,scan);
+            pos1=jugador1.comprovarPosicio(jugador2,pos1,scan);
             taulell.posicionarSimbol(pos1,"Jugador_1",jugador1);
             taulell.dibuixarTaulell();
             String guanyador= mirarQuiGuanya(jugador2,jugador1);
@@ -25,7 +25,7 @@ public class Game {
             }
             System.out.println("Jugador 2: Entra la posicio (1-9):");
             int pos2= jugador2.Posicionar(scan);
-            jugador2.comprovarPosicio(jugador1,pos2,scan);
+            pos2=jugador2.comprovarPosicio(jugador1,pos2,scan);
             taulell.posicionarSimbol(pos2,"Jugador_2",jugador2);
             taulell.dibuixarTaulell();
             guanyador=mirarQuiGuanya(jugador2,jugador1);
