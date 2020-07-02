@@ -5,6 +5,14 @@ import java.util.Scanner;
 
 public class Player {
     ArrayList<Integer> playerPositions = new ArrayList<Integer>();
+    char simbol;
+
+    public Player(String jugador){
+        if(jugador.equals("Jugador_1")){
+            simbol='X';
+        }
+        else simbol='O';
+    }
 
     public int Posicionar(Scanner scan){
         int pos = scan.nextInt();

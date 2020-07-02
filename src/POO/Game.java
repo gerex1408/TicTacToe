@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class Game {
     Board taulell = new Board();
-    Player jugador1 = new Player();
-    Player jugador2 = new Player();
+    Player jugador1 = new Player("Jugador_1");
+    Player jugador2 = new Player("Jugador_2");
     public void start(){
         taulell.dibuixarTaulell();
         while(true) {
