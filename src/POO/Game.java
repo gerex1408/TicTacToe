@@ -10,6 +10,7 @@ public class Game {
     Player jugador1 = new Player("Jugador_1");
     Player jugador2 = new Player("Jugador_2");
     public void start(){
+        taulell.inicialitzar_amb_espais();
         taulell.dibuixarTaulell();
         while(true) {
             Scanner scan = new Scanner(System.in);

@@ -2,22 +2,42 @@ package POO;
 
 public class Board {
     char[][] taulell;
+    private int size =3;
     public Board(){
-        taulell= new char[][]{{' ', '|', ' ', '|', ' '}, {'-', '+', '-', '+', '-'}, {' ', '|', ' ', '|', ' '}, {'-', '+', '-', '+', '-'}, {' ', '|', ' ', '|', ' '}};
+        /*taulell= new char[][]{{' ', '|', ' ', '|', ' '}, {'-', '+', '-', '+', '-'}, {' ', '|', ' ', '|', ' '}, {'-', '+', '-', '+', '-'}, {' ', '|', ' ', '|', ' '}};*/
+        taulell = new char[size][size];
+    }
+    public void inicialitzar_amb_espais(){
+        for(int i=0; i<size; i++){
+            for(int j=0;j<size;j++){
+                taulell[i][j]=' ';
+            }
+        }
     }
     public void dibuixarTaulell(){
+        String separation = "-+-+-";
+        int comptador=0;
         for(char[] fila: taulell){
             for(char c: fila){
                 System.out.print(c);
+                comptador++;
+                if(comptador<size) System.out.print('|');
+                else comptador=0;
             }
             System.out.println();
+            System.out.println(separation);
+
         }
     }
     public void posicionarSimbol(int pos, String user,Player jugador){
 
         jugador.playerPositions.add(pos);
 
-        int i=1;
+        int col = (pos-1) % size;
+        int fila = (pos-1) / size;
+        taulell[fila][col]=jugador.simbol;
+
+        /*int i=1;
         int j=0, z=0;
         boolean trobat=false;
 
@@ -35,6 +55,8 @@ public class Board {
             }
             i++;
         }
+
+         */
     }
      /*switch(pos){
         case 1:
